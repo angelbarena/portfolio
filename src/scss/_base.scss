@@ -1,0 +1,50 @@
+//COLOR VARIABLES
+$bg-gradient-start: #16222A;
+$bg-gradient-end: #3a6073;
+$white: #d5d7d8;
+//FONT VARIABLES
+$font-primary: 'Heebo', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 37.5em;    // 600px;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+//RESET
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+//RESPONSIVE BREAKPOINTS
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    background: no-repeat;
+    background-image: linear-gradient(to top right, $bg-gradient-start, $bg-gradient-end);
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+

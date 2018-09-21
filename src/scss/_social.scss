@@ -1,0 +1,29 @@
+.social{
+    justify-self: center;
+    grid-row: 3 / 4;
+    &-title {
+        color: $white;
+        font-weight: 400;
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &-list {
+        list-style: none;
+        margin: 0 0 6rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            font-weight: 400;
+            margin: 0 .75rem;
+
+            &__link {
+                text-decoration: none;
+                color: $white;
+                vertical-align: middle;
+            }
+        }
+    }
+}

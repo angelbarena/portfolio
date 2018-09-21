@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: {
@@ -53,12 +54,23 @@ module.exports = {
 						}
 				  	}
 				]
+			},
+			{
+				test: /\.svg$/, // your icons directory
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: true,
+					spriteFilename: './icons/icons.svg', // this is the destination of your sprite sheet
+				}
 			}
     	]
     },
     plugins: [
         new HTMLWebpackPlugin({
         	template: 'src/index.html'
-        })
+		}),
+		new SpriteLoaderPlugin({
+			plainSprite: true
+		})
     ]
 }

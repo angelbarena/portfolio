@@ -9,8 +9,7 @@ module.exports = {
     mode: "development",
     output: {
       	filename: "[name]-bundle.js",
-     	path: path.resolve(__dirname, "./dist"),
-      	publicPath: "/"
+     	path: path.resolve(__dirname, "dist"),
     },
     devServer: {
 		  contentBase: "./dist",
@@ -42,19 +41,19 @@ module.exports = {
 					{ loader: "sass-loader" }
 				]
 			},
-			{
-				test: /\.(png|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							publicPath: 'img/',
-    						outputPath: 'img/'
-						}
-				  	}
-				]
-			},
+			// {
+			// 	test: /\.(png|jpg|gif)$/,
+			// 	use: [
+			// 		{
+			// 			loader: 'file-loader',
+			// 			options: {
+			// 				name: '[name].[ext]',
+			// 				publicPath: 'img/',
+    		// 				outputPath: 'img/'
+			// 			}
+			// 	  	}
+			// 	]
+			// },
 			{
 				test: /\.svg$/, // your icons directory
 				loader: 'svg-sprite-loader',

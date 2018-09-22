@@ -44,11 +44,22 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .nav-logo__link {
-    font-size: 3rem; }
   .nav-logo__icon {
     max-height: 45px;
     max-width: 45px; }
+    .nav-logo__icon text {
+      text-anchor: middle; }
+    .nav-logo__icon #overlay {
+      fill: #d5d7d8;
+      opacity: .75; }
+    .nav-logo__icon #text {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -2px; }
+    .nav-logo__icon #r {
+      fill: #d5d7d8;
+      -webkit-mask: url(#mask);
+              mask: url(#mask); }
   .nav-list {
     list-style: none;
     display: -webkit-box;
@@ -64,7 +75,8 @@ body {
       .nav-list__item__link {
         text-decoration: none;
         color: #d5d7d8;
-        vertical-align: middle; }
+        padding-top: 3rem;
+        vertical-align: baseline; }
 
 .headline {
   justify-self: center;

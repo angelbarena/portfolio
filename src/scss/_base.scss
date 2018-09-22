@@ -5,6 +5,15 @@ $white: #d5d7d8;
 //FONT VARIABLES
 $font-primary: 'Heebo', sans-serif;
 
+//RESET
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em;   // 1200px
 $bp-large: 62.5em;   // 1000px
@@ -20,21 +29,13 @@ html {
     }
 }
 
-//RESET
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
 //RESPONSIVE BREAKPOINTS
 
 body {
     font-family: $font-primary;
     font-weight: 400;
-    background: no-repeat;
+    line-height: 1.6;
+    background: cover;
     background-image: linear-gradient(to top right, $bg-gradient-start, $bg-gradient-end);
 }
 

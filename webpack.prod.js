@@ -11,7 +11,7 @@ module.exports = {
     mode: "production",
     output: {
       	filename: "[name]-bundle.js",
-     	path: path.resolve(__dirname, "./dist")
+		 path: path.resolve(__dirname, "dist")
 	},
     module: {
       	rules: [
@@ -42,19 +42,19 @@ module.exports = {
 					}
 				]
 			},
-			{
-				test: /\.(png|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							publicPath: 'img/',
-    						outputPath: 'img/'
-						}
-				  	}
-				]
-			},
+			// {
+			// 	test: /\.(png|jpg|gif)$/,
+			// 	use: [
+			// 		{
+			// 			loader: 'file-loader',
+			// 			options: {
+			// 				name: '[name].[ext]',
+			// 				publicPath: 'img/',
+    		// 				outputPath: 'img/'
+			// 			}
+			// 	  	}
+			// 	]
+			// },
 			{
 				test: /\.svg$/, // your icons directory
 				loader: 'svg-sprite-loader',

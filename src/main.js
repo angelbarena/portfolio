@@ -1,4 +1,4 @@
-require('./icons/ab-logo.svg');
+//require('./icons/ab-logo.svg');
 require("./scss/main.scss");
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'

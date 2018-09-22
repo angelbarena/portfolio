@@ -3,15 +3,30 @@
     grid-row: 1 / 2;
     justify-content: space-between;
     
-    &-logo {
-        
-        &__link {
-            font-size: 3rem;
-        }
+    &-logo {    
 
         &__icon {
             max-height: 45px;
             max-width: 45px;
+            
+            text {
+                text-anchor: middle;
+            }
+            
+            #overlay {
+                fill: $white;
+                opacity: .75;
+            }
+            #text {
+                font-size: 30px;
+                font-weight: 500;
+                letter-spacing: -2px;
+            }
+              
+            #r {
+                fill: $white;
+                mask: url(#mask);
+            }
         }
 
     }
@@ -29,7 +44,8 @@
             &__link {
                 text-decoration: none;
                 color: $white;
-                vertical-align: middle;
+                padding-top: 3rem;
+                vertical-align: baseline;
             }
             
         

@@ -1,0 +1,9 @@
+<svg>
+  <defs>
+    <mask id="mask" x="0" y="0" width="100%" height="100%">
+      <rect id="overlay" x="0" y="0" width="100%" height="100%" />
+      <text id="text" x="50%" y="10" dy="35px">ab</text>
+    </mask>
+  </defs>
+  <rect id="r" x="0" y="0" width="100%" height="100%" />
+</svg>

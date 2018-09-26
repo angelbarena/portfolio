@@ -38,14 +38,27 @@ body {
     background: cover;
     background-image: linear-gradient(to top right, $bg-gradient-start, $bg-gradient-end);
 }
+#app {
+    height: 100%;
+    width: 100%;
+}
 
 .container {
     display: grid;
     height: 100%;
     width: 100%;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: min-content 1fr;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
+}
+
+.main {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 1fr;
+    justify-content: center;
 }
 

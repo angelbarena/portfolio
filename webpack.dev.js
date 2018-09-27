@@ -9,14 +9,16 @@ module.exports = {
     mode: "development",
     output: {
       	filename: "[name]-bundle.js",
-     	path: path.resolve(__dirname, "dist"),
+				path: path.resolve(__dirname, "dist"),
+				publicPath: "/"
     },
     devServer: {
+			historyApiFallback: true,
 		  contentBase: "./dist",
 		  overlay: true,
-		stats: {
-		colors: true
-		}
+			stats: {
+			colors: true
+			}
 	},
 	devtool: "source-map",
     module: {

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
 
@@ -6,9 +7,9 @@ export default class NavBar extends Component {
         return this.props.navListItems.map(item=>{
             return(
                 <li key={item.name} className="nav-list__item">
-                    <a className="nav-list__item__link" href="#">
+                    <Link className="nav-list__item__link" to={item.href}>
                     {item.name}
-                    </a>
+                    </Link>
                 </li>
             );
         });
@@ -18,7 +19,7 @@ export default class NavBar extends Component {
         return(
             <nav className="nav">
                 <div className="nav-logo">
-                    <a href="/" className="nav-logo__link">
+                    <Link to="/" className="nav-logo__link">
                         <svg className="nav-logo__icon">
                             <defs>
                                 <mask id="mask" x="0" y="0" width="100%" height="100%">
@@ -28,7 +29,7 @@ export default class NavBar extends Component {
                             </defs>
                             <rect id="r" x="0" y="0" width="100%" height="100%" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
                 <ul className="nav-list">
                     {this.renderItems()}

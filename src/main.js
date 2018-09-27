@@ -1,20 +1,23 @@
+//require('./icons/ab-logo.svg');
+require("./scss/main.scss");
 /*react*/
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
-import Main from './components/Main';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+//react router dom
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //font awesome icons
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { library, /*dom*/ } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons';
-// We are only using the user-astronaut icon
-library.add(faLinkedin, faGithub, faCodepen);
-// Replace any existing <i> tags with <svg> and set up a MutationObserver to
-// continue doing this as the DOM changes.
-//dom.watch();
-//require('./icons/ab-logo.svg');
-require("./scss/main.scss");
-
-
+import {faPhoneSquare, faEnvelopeSquare, faCog, faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons'
+library.add(
+    faLinkedin, faGithub, faCodepen, 
+    faPhoneSquare, faEnvelopeSquare, 
+    faCog, faExternalLinkAlt);
 class App extends Component {
     constructor(props){
         super(props);
@@ -35,17 +38,22 @@ class App extends Component {
             ]
         }
     }
-
     render(){
         return(
-            <div className="container">
-                <NavBar navListItems={this.state.navListItems}/>
-                <Main/>
-            </div>
+            <Router>
+                <div className="container">
+                    <NavBar navListItems={this.state.navListItems}/>
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route path='/about' component={About}/>
+                        <Route path='/projects' component={Projects}/>
+                        <Route path='/contact' component={Contact}/>
+                    </Switch>
+                </div>
+            </Router>
         );
     }
 }
-
 ReactDOM.render(
     <App/>,
     document.getElementById('app')

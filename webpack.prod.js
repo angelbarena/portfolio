@@ -11,7 +11,8 @@ module.exports = {
     mode: "production",
     output: {
       	filename: "[name]-bundle.js",
-		 path: path.resolve(__dirname, "dist")
+		path: path.resolve(__dirname, "dist"),
+		publicPath: "/"
 	},
     module: {
       	rules: [
@@ -65,10 +66,10 @@ module.exports = {
     	]
     },
     plugins: [
-		//new OptimizeCSSAssetsPlugin(),
-		new MiniCSSExtractPlugin(/*{
-			filename: "[name]-[contenthash].css"
-		}*/),
+		new OptimizeCSSAssetsPlugin(),
+		new MiniCSSExtractPlugin({
+			filename: "[name].css"
+		}),
         new HTMLWebpackPlugin({
         	template: './src/index.html'
 		})/*,

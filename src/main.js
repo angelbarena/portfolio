@@ -44,8 +44,8 @@ class App extends Component {
                 <div className="container">
                     <NavBar navListItems={this.state.navListItems}/>
                     <Switch>
-                        <Redirect exact from='/' to='/porfolio/'/>
-                        <Route path='/porfolio/' component={Home}/>
+                        <Redirect from='/portfolio/' to='/'/>
+                        <Route path='/home' component={Home}/>
                         <Route path='/about' component={About}/>
                         <Route path='/projects' component={Projects}/>
                         <Route path='/contact' component={Contact}/>

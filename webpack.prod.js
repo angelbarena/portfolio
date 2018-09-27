@@ -6,7 +6,8 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     entry: {
-      	main: ["./src/main.js"]
+		spafix: ["./src/spa-fix.js"],
+		main: ["./src/main.js"]
     },
     mode: "production",
     output: {
@@ -71,6 +72,10 @@ module.exports = {
 		}),
         new HTMLWebpackPlugin({
         	template: './src/index.html'
+		}),
+		new HTMLWebpackPlugin({  // Also generate a test.html
+			filename: '404.html',
+			template: 'src/404.html'
 		})/*,
 		new SpriteLoaderPlugin({
 			plainSprite: true

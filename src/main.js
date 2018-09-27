@@ -1,5 +1,5 @@
 //require('./icons/ab-logo.svg');
-require("./scss/main.scss");
+import './scss/main.scss';
 /*react*/
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';

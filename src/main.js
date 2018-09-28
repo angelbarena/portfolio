@@ -18,10 +18,21 @@ library.add(
     faLinkedin, faGithub, faCodepen, 
     faPhoneSquare, faEnvelopeSquare, 
     faCog, faExternalLinkAlt);
+
+const NotFound = ({location})=>{
+    return (
+        <main className="not-found">
+            <h1 className="not-found__title">404! Not Found... {`¯\\_(ツ)_/¯`}</h1>
+            <h3 className="not-found__subtitle">No match for <code>{location.pathname}</code></h3>      
+        </main>
+    );
+};
+
 class App extends Component {
     constructor(props){
         super(props);
         this.state = {
+            subRoute: '/portfolio',
             navListItems: [
                 {
                     name: 'about',
@@ -39,22 +50,25 @@ class App extends Component {
         }
     }
     render(){
+        const props = this.state;
         return(
             <Router>
                 <div className="container">
-                    <NavBar navListItems={this.state.navListItems}/>
+                    <NavBar {...props}/>
                     <Switch>
-                        <Redirect exact from='/portfolio/' to='/'/>
-                        <Route path='/' component={Home}/>
-                        <Route path='/about' component={About}/>
-                        <Route path='/projects' component={Projects}/>
-                        <Route path='/contact' component={Contact}/>
+                        <Redirect exact from='/' to={`${this.state.subRoute}/`}/>
+                        <Route exact path={`${this.state.subRoute}/`} component={Home}/>
+                        <Route path={`${this.state.subRoute}/about`} component={About}/>
+                        <Route path={`${this.state.subRoute}/projects`} component={Projects}/>
+                        <Route path={`${this.state.subRoute}/contact`} component={Contact}/>
+                        <Route component={NotFound}/>
                     </Switch>
                 </div>
             </Router>
         );
     }
 }
+
 ReactDOM.render(
     <App/>,
     document.getElementById('app')

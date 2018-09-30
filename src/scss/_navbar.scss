@@ -34,21 +34,30 @@
     &-list{
         list-style: none;
         display: flex;
-        justify-content: space-around;
-        align-content: center;
-
+        //justify-content: space-around;
+        //align-items: stretch;
         &__item{
             font-size: 2.2rem;
-            margin: auto 2.5rem;
 
             &__link {
+                display: block;
+                padding: 0 2.5rem;
                 text-decoration: none;
+                text-align: center;
                 color: $white;
-                padding-top: 3rem;
-                vertical-align: baseline;
+                height: 45px;
+                line-height: 2;
+                transition: all ease-in-out .3s;
             }
-            
-        
+            &__link:hover {
+                color: #fff;
+                background-color: rgba($white, .5);
+            }     
         }
     }
+}
+
+.selected {
+    color: #fff;
+    background-color: rgba($white, .5);
 }

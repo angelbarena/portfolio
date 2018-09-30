@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default class NavBar extends Component {
     renderItems(){
         return this.props.navListItems.map(item=>{
             return(
                 <li key={item.name} className="nav-list__item">
-                    <Link className="nav-list__item__link" to={`${this.props.subRoute}${item.href}`}>
+                    <NavLink className="nav-list__item__link" activeClassName="selected" to={`${this.props.subRoute}${item.href}`}>
                     {item.name}
-                    </Link>
+                    </NavLink>
                 </li>
             );
         });

@@ -1,0 +1,9 @@
+.home {
+    grid-row: 2/3;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}

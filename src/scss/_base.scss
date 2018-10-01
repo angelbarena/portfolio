@@ -35,7 +35,8 @@ body {
     font-family: $font-primary;
     font-weight: 400;
     line-height: 1.6;
-    background: cover;
+    background-size: cover;
+    background-attachment: fixed;
     background-image: linear-gradient(to top right, $bg-gradient-start, $bg-gradient-end);
 }
 #app {
@@ -51,15 +52,6 @@ body {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-}
-
-.main {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: 1fr min-content;
-    grid-template-columns: 1fr;
-    justify-content: center;
 }
 
 /*transitions fades*/

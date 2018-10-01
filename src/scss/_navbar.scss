@@ -1,6 +1,9 @@
 .nav {
+    top: 0; 
+    grid-row: 1/2;
+    width: 100%;
+    position: fixed;
     display: flex;
-    grid-row: 1 / 2;
     justify-content: space-between;
     
     &-logo {    
@@ -46,7 +49,7 @@
                 text-align: center;
                 color: $white;
                 height: 45px;
-                line-height: 2;
+                line-height: 45px;
                 transition: all ease-in-out .3s;
             }
             &__link:hover {

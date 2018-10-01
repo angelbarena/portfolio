@@ -40,7 +40,7 @@ export default class Main extends Component {
     render(){
         return(
             <CSSTransition in={true} appear={true} timeout={300} classNames="fade">
-                <main className="main">
+                <main className="home">
                     <section className="headline">
                         <h1 className="headline__title">I'm Angel Barena</h1>
                         <h3 className="headline__subtitle">I make websites and applications</h3>

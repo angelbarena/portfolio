@@ -2,7 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-//const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: {
@@ -55,14 +55,14 @@ module.exports = {
 			// 	  	}
 			// 	]
 			// },
-			// {
-			// 	test: /\.svg$/, // your icons directory
-			// 	loader: 'svg-sprite-loader',
-			// 	options: {
-			// 		extract: true,
-			// 		spriteFilename: './icons/icons.svg', // this is the destination of your sprite sheet
-			// 	}
-			// }
+			{
+				test: /\.svg$/, // your icons directory
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: true,
+					spriteFilename: './icons/icons.svg', // this is the destination of your sprite sheet
+				}
+			}
     	]
     },
     plugins: [
@@ -70,15 +70,15 @@ module.exports = {
 		new MiniCSSExtractPlugin({
 			filename: "[name].css"
 		}),
-        new HTMLWebpackPlugin({
-        	template: './src/index.html'
+		new HTMLWebpackPlugin({
+			template: './src/index.html'
 		}),
 		new HTMLWebpackPlugin({  // Also generate a test.html
 			filename: '404.html',
 			template: 'src/404.html'
-		})/*,
+		}),
 		new SpriteLoaderPlugin({
 			plainSprite: true
-		})*/
+		})
     ]
 }

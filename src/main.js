@@ -1,6 +1,8 @@
-//require('./icons/ab-logo.svg');
+//import './icons/ab-logo.svg';
+//import './icons/bootstrap.svg';
+/*SCSS*/
 import './scss/main.scss';
-/*react*/
+/*React*/
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './components/NavBar';
@@ -12,12 +14,14 @@ import Contact from './components/Contact';
 import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 //font awesome icons
 import { library, /*dom*/ } from '@fortawesome/fontawesome-svg-core';
-import { faLinkedin, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faCodepen, 
+    faHtml5, faReact, faCss3Alt, faSass, faJs, faNodeJs, faGit} from '@fortawesome/free-brands-svg-icons';
 import {faPhoneSquare, faEnvelopeSquare, faCog, faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons'
 library.add(
     faLinkedin, faGithub, faCodepen, 
     faPhoneSquare, faEnvelopeSquare, 
-    faCog, faExternalLinkAlt);
+    faCog, faExternalLinkAlt,
+    faHtml5, faReact, faCss3Alt, faSass, faJs ,faNodeJs, faGit);
 
 const NotFound = ({location})=>{
     return (

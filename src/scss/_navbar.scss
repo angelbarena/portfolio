@@ -5,6 +5,9 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
+    @media only screen and (max-width: $bp-medium) {
+        background-color: rgba(#333, .25);
+    }
     
     &-logo {    
 
@@ -39,8 +42,15 @@
         display: flex;
         //justify-content: space-around;
         //align-items: stretch;
+        @media only screen and (max-width: $bp-small) {
+            flex-grow: 1;
+            justify-content: space-between;
+        }
         &__item{
             font-size: 2.2rem;
+            @media only screen and (max-width: $bp-small){
+                width: 100%;
+            }
 
             &__link {
                 display: block;
@@ -51,6 +61,15 @@
                 height: 45px;
                 line-height: 45px;
                 transition: all ease-in-out .3s;
+
+                @media only screen and (max-width: $bp-small) {
+                    color: #fff;
+                    padding: 0 auto;
+                }
+                
+                @media only screen and (max-width: 375px){
+                    padding: 0;
+                }
             }
             &__link:hover {
                 color: #fff;

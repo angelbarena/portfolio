@@ -1,6 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-//const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: {
@@ -9,10 +9,11 @@ module.exports = {
     mode: "development",
     output: {
       	filename: "[name]-bundle.js",
-				path: path.resolve(__dirname, "dist"),
+				//path: path.resolve(__dirname, "dist"),
 				publicPath: "/"
     },
     devServer: {
+			host: '0.0.0.0',
 			historyApiFallback: true,
 		  contentBase: "./dist",
 		  overlay: true,
@@ -56,22 +57,20 @@ module.exports = {
 			// 	  	}
 			// 	]
 			// },
-			// {
-			// 	test: /\.svg$/, // your icons directory
-			// 	loader: 'svg-sprite-loader',
-			// 	options: {
-			// 		extract: true,
-			// 		spriteFilename: './icons/icons.svg', // this is the destination of your sprite sheet
-			// 	}
-			// }
+			{
+				test: /\.svg$/, // your icons directory
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: true,
+					spriteFilename: './icons/icons.svg', // this is the destination of your sprite sheet
+				}
+			}
     	]
     },
     plugins: [
-        new HTMLWebpackPlugin({
-        	template: 'src/index.html'
-		})/*,
-		new SpriteLoaderPlugin({
-			plainSprite: true
-		})*/
-    ]
+      new HTMLWebpackPlugin({
+        template: 'src/index.html'
+			}),
+			new SpriteLoaderPlugin()
+  	]
 }

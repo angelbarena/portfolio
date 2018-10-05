@@ -6,7 +6,7 @@ export default class NavBar extends Component {
         return this.props.navListItems.map(item=>{
             return(
                 <li key={item.name} className="nav-list__item">
-                    <NavLink className="nav-list__item__link" activeClassName="selected" to={`${this.props.subRoute}${item.href}`}>
+                    <NavLink className="nav-list__item__link" activeClassName="selected" to={`${item.href}`}>
                     {item.name}
                     </NavLink>
                 </li>
@@ -18,7 +18,7 @@ export default class NavBar extends Component {
         return(
             <nav className="nav">
                 <div className="nav-logo">
-                    <Link to={`${this.props.subRoute}/`} className="nav-logo__link">
+                    <Link to={`/`} className="nav-logo__link">
                         <svg className="nav-logo__icon">
                             <defs>
                                 <mask id="mask" x="0" y="0" width="100%" height="100%">

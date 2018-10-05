@@ -36,7 +36,7 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            subRoute: '/portfolio',
+            // subRoute: '/portfolio',
             navListItems: [
                 {
                     name: 'about',
@@ -60,11 +60,11 @@ class App extends Component {
                 <div className="container">
                     <NavBar {...props}/>
                     <Switch>
-                        <Redirect exact from='/' to={`${this.state.subRoute}/`}/>
-                        <Route exact path={`${this.state.subRoute}/`} component={Home}/>
-                        <Route path={`${this.state.subRoute}/about`} component={About}/>
-                        <Route path={`${this.state.subRoute}/projects`} component={Projects}/>
-                        <Route path={`${this.state.subRoute}/contact`} component={Contact}/>
+                        {/* <Redirect exact from='/' to={`/`}/> */}
+                        <Route exact path={`/`} component={Home}/>
+                        <Route path={`/about`} component={About}/>
+                        <Route path={`/projects`} component={Projects}/>
+                        <Route path={`/contact`} component={Contact}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>

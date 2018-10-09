@@ -3,20 +3,23 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
     color: $white;
 
     &-title {
+        grid-row: 1/2;
         align-self: end;
         font-size: 3rem;
         font-weight: 300;
         text-align: center;
+        margin-top: 30vh;
         margin-bottom: 2.5rem;
     }
     &-placeholder {
+        grid-row: 2/3;
         align-self: start;
         font-size: 2.2rem;
         font-weight: 300;
@@ -26,5 +29,43 @@
             color: $white;
             text-decoration: none;
         }
+    }
+
+    &-section{
+        grid-row: 3/4;
+        text-align: center;
+        margin: 5rem 0 10vh 0 ;
+
+        .category__list-item{
+            &__name{
+                margin-bottom: 1rem;
+                font-size: 2.2rem;
+                font-weight: 300;
+                color: $white;
+            }
+
+            .projects__list-item{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                &-title{
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 2rem;
+                    white-space: nowrap;
+                    color: $white;
+                }
+                &-repo, 
+                &-demo{
+                    font-size: 1.6rem;
+                    font-weight: 300;
+                    color: $white;
+                    text-decoration: none;
+                    padding: 0 1rem;
+                    margin: 0 1rem;
+                }
+            }
+        }
+
     }
 }

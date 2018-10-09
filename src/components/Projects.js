@@ -8,12 +8,17 @@ export default class Projects extends Component {
         this.state = {
             projects: [
                 {
-                    name: "React based",
+                    name: "React examples",
                     list: [
                         {
                             title:"PoC Jest & Enzyme Testing: ",
                             repo: "https://github.com/Angel-Barena/jest-enzyme-testing", 
                             demo: "https://angel-barena.github.io/jest-enzyme-testing/"
+                        },
+                        {
+                            title:"PoC React & Redux Blog: ",
+                            repo: "https://github.com/Angel-Barena/react-blog", 
+                            demo: "https://angel-barena.github.io/react-blog/"
                         }
                     ]
                 }
